@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACKER_SIMULATOR_OS_V2</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hacker.css">
+</head>
+<body>
+
+    <div id="notification" class="notification"></div>
+
+    <div id="side-wallet" class="wallet-panel">
+        <div class="wallet-header">ENCRYPTED_WALLET</div>
+        <div class="coin-row">
+            <span class="btc-icon">₿</span>
+            <span id="wallet-balance">R$ 0,00</span>
+        </div>
+        <div class="wallet-footer">STATUS: SECURE</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">TERMINAL_<span>HACKER</span></div>
+            <div class="system-status"><span class="pulse"></span> ALIVE</div>
+        </header>
+
+        <div class="main-grid">
+            
+            <section class="card glass">
+                <p class="label">>> TRACE_ROUTE_INITIALIZED</p>
+                <h2 id="display-ip">0.0.0.0</h2>
+                <div class="data-grid">
+                    <div class="data-item"><span>LOCAL</span><strong id="city">--</strong></div>
+                    <div class="data-item"><span>REGION</span><strong id="region">--</strong></div>
+                    <div class="data-item"><span>ISP</span><strong id="isp">--</strong></div>
+                    <div class="data-item"><span>COORDS</span><strong><span id="lat">0</span>, <span id="lon">0</span></strong></div>
+                </div>
+            </section>
+
+            <section class="card glass map-box">
+                <div id="map"></div>
+                <div class="input-group">
+                    <input type="text" id="ip-input" placeholder="ENTRE COM O IP ALVO...">
+                    <button id="search-btn">RASTREAR</button>
+                    <button id="clear-btn" style="background: rgba(255,255,255,0.1);">RESET</button>
+                </div>
+            </section>
+
+            <section id="panel-miner" class="card glass">
+                <p class="label">>> CRYPTO_MINING_SERVICE</p>
+                <div id="miner-options">
+                    <p>PRESSIONE A INICIAL: <br>
+                    <span class="hl">[B]</span> BITCOIN | <span class="hl">[E]</span> ETHEREUM | <span class="hl">[S]</span> SOLANA</p>
+                </div>
+                <div id="miner-proc" class="hidden">
+                    <p id="miner-name" class="hl">MINERANDO...</p>
+                    <div class="progress-bg"><div id="bar-miner" class="bar blue"></div></div>
+                    <div class="stats">
+                        <span id="miner-time">04:00</span>
+                        <span id="miner-perc">0%</span>
+                    </div>
+                    <button id="btn-resgatar" class="hidden" onclick="resgatarCrypto()">RESGATAR_BLOCK</button>
+                </div>
+            </section>
+
+            <section id="panel-ddos" class="card glass">
+                <p class="label">>> DDOS_ATTACK_MODULE</p>
+                <div id="ddos-list" class="scroll-list">
+                    <p>INICIAIS PARA ATAQUE:</p>
+                    <div class="target-cloud">
+                        [Y]outube [D]iscord [A]mazon [T]iktok [F]acebook [X] Twitter [I]nstagram [R]umble [L]S Hub [G]ithub [S]tudio [V] DevianArt [N] Reddit [P] Replit
+                    </div>
+                </div>
+                <div id="ddos-proc" class="hidden">
+                    <p id="target-name" style="color: #ff4444;">ALVO: ---</p>
+                    <div class="progress-bg"><div id="bar-ddos" class="bar green"></div></div>
+                    <div class="stats">
+                        <span id="ddos-time">02:00</span>
+                        <span id="ddos-perc">0%</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="hacker.js"></script>
+</body>
+</html>
